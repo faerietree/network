@@ -5,3 +5,6 @@
 * Machine machine interfacing
 * Communications
 
+## High Level Overview
+<img src="high_level_overview.jpg" alt=""/>
+
