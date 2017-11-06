@@ -1250,8 +1250,8 @@ F 3 "" H 950 1350 60  0000 C CNN
 	1    950  1350
 	0    1    1    0   
 $EndComp
-Text Notes 5400 4600 0    79   ~ 16
-BBB Industrial (outdoor)
+Text Notes 5250 4600 0    79   ~ 16
+BBBlue Industrial (outdoor)
 Text Notes 7050 5400 0    47   ~ 0
 Data
 Text Label 5300 5150 0    60   ~ 0
