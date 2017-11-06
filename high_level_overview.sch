@@ -1,11 +1,14 @@
 EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:high_level_overview-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 20
+Sheet 1 4
 Title "Network High Level Overview"
-Date "2017-11-02"
+Date "2017-11-06"
 Rev "1"
 Comp ""
 Comment1 ""
@@ -14,73 +17,63 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 8700 5000 2000 200 
+S 8250 4700 500  150 
 U 586BFA55
 F0 "server" 50
 F1 "electronics/server.sch" 50
 $EndSheet
 $Sheet
-S 1200 5350 2000 200 
-U 586BFA55
-F0 "computer" 50
-F1 "mechanics/computer.sch" 50
-$EndSheet
-$Sheet
-S 6200 5250 2000 200 
+S 7300 5250 500  150 
 U 574DD8AA
 F0 "data_selection_and_storage" 50
 F1 "program/data_selection_and_storage.sch" 50
 $EndSheet
-Text Notes 4550 900  0    138  ~ 0
-     - Network -\n
+Text Notes 4000 950  0    138  ~ 0
+          - Network -\n
 Text Notes 300  4250 1    99   ~ 0
      input &\noutput interfaces
-Text Notes 800  6500 1    85   ~ 0
-Unix realtime control network
+Text Notes 750  6450 1    85   ~ 0
+UNIX realtime control cluster
 Text Notes 9350 7100 0    99   ~ 0
 World Wide Webpage
-Text Notes 7400 4900 0    79   ~ 16
-Jetson TK1 desktopCUDAcode compatible\nNVIDIAUbuntu, Unity, Link to the Internet,\nServer.
-Text Notes 9600 5500 0    61   ~ 12
-Filesystem SQLite\n MySQL Database\n
-Text Notes 9650 5800 0    60   ~ 0
+Text Notes 7350 4600 0    79   ~ 16
+Jetson TK1, NVIDIAUbuntu, Unity, Internet, Server
+Text Notes 9650 5750 0    61   ~ 12
+Filesystem | Database\n
+Text Notes 9700 6050 0    60   ~ 0
 e.g.\nlogs\nbackups
 Text Notes 10400 6900 0    60   ~ 0
 OUTPUT\nsharing,\nstatus,\nemergency
 Text Notes 8500 6900 0    60   ~ 0
 INPUT\ncontrol command
-Text Notes 300  6250 1    99   ~ 0
-Digital World
-Text Notes 3950 1150 0    60   ~ 0
-Technologies: Mechanics, Hydraulics, Electronics, Program | Input: Seeds, Water
-Text Notes 9750 950  0    139  ~ 28
-OUTPUT SIDE
-Text Notes 600  950  0    139  ~ 28
-INPUT SIDE
-Text Notes 1200 5850 0    60   ~ 12
-(ARM+Realtime Kernel+Voidlinux+OpenBox+Machinekit/EMC)+
-Text Notes 300  2350 1    99   ~ 0
-Analog World
+Text Notes 300  6500 1    99   ~ 0
+Digital <-
+Text Notes 3800 1150 0    60   ~ 0
+Technologies: Mechanics, Electronics, Program | Input: Electricity, Thought
+Text Notes 4250 6450 0    60   ~ 12
+(ARM+Realtime Kernel+Void+OpenBox+Machinekit/EMC)+
+Text Notes 300  1450 1    99   ~ 0
+-> Analog
 $Comp
 L GND #PWR?
 U 1 1 51D84869
-P 1050 2850
-F 0 "#PWR?" H 1050 2850 30  0001 C CNN
-F 1 "GND" H 1050 2780 30  0001 C CNN
-F 2 "" H 1050 2850 60  0000 C CNN
-F 3 "" H 1050 2850 60  0000 C CNN
-	1    1050 2850
+P 950 2750
+F 0 "#PWR?" H 950 2750 30  0001 C CNN
+F 1 "GND" H 950 2680 30  0001 C CNN
+F 2 "" H 950 2750 60  0000 C CNN
+F 3 "" H 950 2750 60  0000 C CNN
+	1    950  2750
 	1    0    0    -1  
 $EndComp
 Text Notes 7250 7100 0    99   ~ 0
 Touchscreen
-Text Notes 5000 2650 0    60   ~ 0
-Actuators: Valves, Motors, Cylinders, ...
-Text Notes 1200 6350 0    60   ~ 0
-Functionality:\n- Watchdog for other control bots (check their heartbeat n to n network, with n  being a natural number)\n- Control hydraulic pillow pressure to stop at correct angle overshoot\n- Receive commands from server\n- Send input, output state, control data to server
-Text Notes 4750 3600 0    60   ~ 12
- incoming states:
-Text Notes 6950 6150 0    60   ~ 0
+Text GLabel 750  950  0    60   Input ~ 0
+12V
+Text GLabel 750  1150 0    60   Input ~ 0
+5V
+Text Notes 900  6450 0    60   ~ 0
+Functionality:\n- Watchdog (check heartbeat)\n- Send input, output state, control data to server
+Text Notes 6950 6300 0    47   ~ 0
 Command
 Text Notes 5900 7100 0    99   ~ 0
 LCD Display
@@ -118,42 +111,40 @@ Wire Notes Line
 	3650 1250 3650 550 
 Wire Notes Line
 	3650 550  8050 550 
-Wire Notes Line
-	11100 4400 600  4400
-Wire Notes Line
-	600  1000 11100 1000
 Wire Wire Line
-	1050 2600 1050 2850
+	850  2600 950  2600
+Wire Wire Line
+	950  2600 1050 2600
+Wire Wire Line
+	1050 2600 1050 2750
 Wire Notes Line
-	5650 2850 5650 3050
+	5600 3400 5600 3600
 Wire Notes Line
-	5650 3050 5600 3050
+	5600 3600 5550 3600
 Wire Notes Line
-	5600 3050 5700 3150
+	5550 3600 5650 3700
 Wire Notes Line
-	5700 3150 5800 3050
+	5650 3700 5750 3600
 Wire Notes Line
-	5800 3050 5750 3050
+	5750 3600 5700 3600
 Wire Notes Line
-	5750 3050 5750 2850
+	5700 3600 5700 3400
 Wire Notes Line
-	5750 2850 5650 2850
+	5700 3400 5600 3400
 Wire Notes Line
-	5950 3150 5950 2950
+	5900 3700 5900 3500
 Wire Notes Line
-	5950 2950 6000 2950
+	5900 3500 5950 3500
 Wire Notes Line
-	6000 2950 5900 2850
+	5950 3500 5850 3400
 Wire Notes Line
-	5900 2850 5800 2950
+	5850 3400 5750 3500
 Wire Notes Line
-	5800 2950 5850 2950
+	5750 3500 5800 3500
 Wire Notes Line
-	5850 2950 5850 3150
+	5800 3500 5800 3700
 Wire Notes Line
-	5850 3150 5950 3150
-Wire Notes Line
-	11100 2700 600  2700
+	5800 3700 5900 3700
 Wire Notes Line
 	11100 6950 8450 6950
 Wire Notes Line
@@ -274,101 +265,155 @@ Wire Notes Line
 	8300 6950 8250 7000
 Wire Notes Line
 	600  4450 6950 4450
-Text Notes 7600 6300 0    49   ~ 0
-Functionality:\n- run RobotOperatingSystem nodes\n- run OpenCV (computer vision)\n- process 3D data (GPU)\n- store data\n- run touchpad\n- receive/process/forward commands
+Text Notes 7600 6250 0    49   ~ 0
+- run RobotOperatingSystem nodes\n- run OpenCV (computer vision)\n- process 3D data (GPU)\n- store data\n- run touchpad\n- receive/process/forward commands
 Text Label 2200 7600 0    60   ~ 12
 worlddevelopment
-Text GLabel 2150 1000 1    60   Input ~ 0
-AC_phase1
-Text GLabel 2000 1000 1    60   Input ~ 0
+Text GLabel 950  550  0    60   Input ~ 0
 230VAC
 $Comp
 L GNDPWR #PWR?
 U 1 1 586C021D
-P 850 2850
-F 0 "#PWR?" H 850 2900 40  0001 C CNN
-F 1 "GNDPWR" H 850 2770 40  0000 C CNN
-F 2 "" H 850 2850 60  0000 C CNN
-F 3 "" H 850 2850 60  0000 C CNN
-	1    850  2850
+P 850 2750
+F 0 "#PWR?" H 850 2800 40  0001 C CNN
+F 1 "GNDPWR" H 850 2670 40  0000 C CNN
+F 2 "" H 850 2750 60  0000 C CNN
+F 3 "" H 850 2750 60  0000 C CNN
+	1    850  2750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	850  2450 850  2600
 Wire Wire Line
-	850  2600 850  2850
+	850  2600 850  2750
 Connection ~ 850  2600
-Text GLabel 8550 1000 1    60   Input ~ 0
+Text GLabel 750  750  0    60   Input ~ 0
+24V
+Text GLabel 750  1350 0    60   Input ~ 0
 3V3
-Text GLabel 2950 1000 1    60   Input ~ 0
-air
-Text GLabel 1850 1000 1    60   Input ~ 0
-120VAC
-Text GLabel 2300 1000 1    60   Input ~ 0
-AC_phase2
-Text GLabel 2450 1000 1    60   Input ~ 0
-AC_phase3
 $Comp
 L +3.3V #PWR?
 U 1 1 586C8853
-P 8550 1000
-F 0 "#PWR?" H 8550 960 30  0001 C CNN
-F 1 "+3.3V" H 8550 1110 30  0000 C CNN
-F 2 "" H 8550 1000 60  0000 C CNN
-F 3 "" H 8550 1000 60  0000 C CNN
-	1    8550 1000
-	0    -1   -1   0   
+P 950 1350
+F 0 "#PWR?" H 950 1310 30  0001 C CNN
+F 1 "+3.3V" H 950 1460 30  0000 C CNN
+F 2 "" H 950 1350 60  0000 C CNN
+F 3 "" H 950 1350 60  0000 C CNN
+	1    950  1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 586C8867
+P 950 1150
+F 0 "#PWR?" H 950 1240 20  0001 C CNN
+F 1 "+5V" H 950 1240 30  0000 C CNN
+F 2 "" H 950 1150 60  0000 C CNN
+F 3 "" H 950 1150 60  0000 C CNN
+	1    950  1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L +12V #PWR?
+U 1 1 586C887B
+P 950 950
+F 0 "#PWR?" H 950 900 20  0001 C CNN
+F 1 "+12V" H 950 1050 30  0000 C CNN
+F 2 "" H 950 950 60  0000 C CNN
+F 3 "" H 950 950 60  0000 C CNN
+	1    950  950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L +24V #PWR?
+U 1 1 586C888F
+P 950 750
+F 0 "#PWR?" H 950 700 20  0001 C CNN
+F 1 "+24V" H 950 850 30  0000 C CNN
+F 2 "" H 950 750 60  0000 C CNN
+F 3 "" H 950 750 60  0000 C CNN
+	1    950  750 
+	1    0    0    -1  
 $EndComp
 $Comp
 L PWR_FLAG #FLG?
 U 1 1 586C8CA2
-P 8550 1000
-F 0 "#FLG?" H 8550 1095 30  0001 C CNN
-F 1 "PWR_FLAG" H 8550 1180 30  0000 C CNN
-F 2 "" H 8550 1000 60  0000 C CNN
-F 3 "" H 8550 1000 60  0000 C CNN
-	1    8550 1000
-	-1   0    0    1   
+P 950 1150
+F 0 "#FLG?" H 950 1245 30  0001 C CNN
+F 1 "PWR_FLAG" H 950 1330 30  0000 C CNN
+F 2 "" H 950 1150 60  0000 C CNN
+F 3 "" H 950 1150 60  0000 C CNN
+	1    950  1150
+	0    1    1    0   
+$EndComp
+$Comp
+L PWR_FLAG #FLG?
+U 1 1 586C8CAD
+P 950 950
+F 0 "#FLG?" H 950 1045 30  0001 C CNN
+F 1 "PWR_FLAG" H 950 1130 30  0000 C CNN
+F 2 "" H 950 950 60  0000 C CNN
+F 3 "" H 950 950 60  0000 C CNN
+	1    950  950 
+	0    1    1    0   
+$EndComp
+$Comp
+L PWR_FLAG #FLG?
+U 1 1 586C8CBD
+P 950 750
+F 0 "#FLG?" H 950 845 30  0001 C CNN
+F 1 "PWR_FLAG" H 950 930 30  0000 C CNN
+F 2 "" H 950 750 60  0000 C CNN
+F 3 "" H 950 750 60  0000 C CNN
+	1    950  750 
+	0    1    1    0   
+$EndComp
+$Comp
+L PWR_FLAG #FLG?
+U 1 1 586C8CDD
+P 950 550
+F 0 "#FLG?" H 950 645 30  0001 C CNN
+F 1 "PWR_FLAG" H 950 730 30  0000 C CNN
+F 2 "" H 950 550 60  0000 C CNN
+F 3 "" H 950 550 60  0000 C CNN
+	1    950  550 
+	0    1    1    0   
 $EndComp
 Text GLabel 850  2450 1    60   Input ~ 0
 neutral
 Text GLabel 850  2600 0    60   Input ~ 0
 earth
-Wire Wire Line
-	850  2600 1050 2600
 Connection ~ 1050 2600
 Text GLabel 1050 2600 1    60   Input ~ 0
 GND
-Text Notes 1250 4700 0    60   ~ 0
-Sensor Signal Distribution (SW, ROS/UNIX)
 Wire Notes Line
-	5650 4000 5750 4000
+	9000 3400 9100 3400
 Wire Notes Line
-	5750 4000 5750 4200
+	9100 3400 9100 3600
 Wire Notes Line
-	5750 4200 5800 4200
+	9100 3600 9150 3600
 Wire Notes Line
-	5800 4200 5700 4300
+	9150 3600 9050 3700
 Wire Notes Line
-	5700 4300 5600 4200
+	9050 3700 8950 3600
 Wire Notes Line
-	5600 4200 5650 4200
+	8950 3600 9000 3600
 Wire Notes Line
-	5650 4200 5650 4000
+	9000 3600 9000 3400
 Wire Notes Line
-	5800 4100 5900 4000
+	9150 3500 9250 3400
 Wire Notes Line
-	5900 4000 6000 4100
+	9250 3400 9350 3500
 Wire Notes Line
-	6000 4100 5950 4100
+	9350 3500 9300 3500
 Wire Notes Line
-	5950 4100 5950 4300
+	9300 3500 9300 3700
 Wire Notes Line
-	5950 4300 5850 4300
+	9300 3700 9200 3700
 Wire Notes Line
-	5850 4300 5850 4100
+	9200 3700 9200 3500
 Wire Notes Line
-	5850 4100 5800 4100
+	9200 3500 9150 3500
 Wire Notes Line
 	10250 6650 10150 6650
 $Bitmap
@@ -1162,12 +1207,133 @@ DF 03 95 07 C6 5E 03 70 14 94 AE 03 63 A1 6F 1A 1E 00 FC 7F 6B 97 BA 2E 5F 27 7B
 49 45 4E 44 AE 42 60 82 
 EndData
 $EndBitmap
-Text Notes 6050 3300 0    60   ~ 12
-outgoing states:
-Text Notes 5550 2100 0    94   ~ 19
+Text Notes 6000 4000 0    60   ~ 0
+control signals\nstatus lights\nsounds\nspeech\nimages\ndirect comm\nwifi hotspot
+Text GLabel 8250 4750 0    60   Input ~ 0
+12V
+$Comp
+L PWR_FLAG #FLG?
+U 1 1 58D1E816
+P 8250 4750
+F 0 "#FLG?" H 8250 4845 30  0001 C CNN
+F 1 "PWR_FLAG" H 8250 4930 30  0000 C CNN
+F 2 "" H 8250 4750 60  0000 C CNN
+F 3 "" H 8250 4750 60  0000 C CNN
+	1    8250 4750
+	-1   0    0    1   
+$EndComp
+Text Notes 7600 5750 0    61   ~ 12
+Functionality\n
+Wire Notes Line
+	11100 2700 600  2700
+Text Notes 8000 4000 0    60   ~ 0
+images\nspeech\nremote control (ethernet)
+$Comp
+L VDD #PWR?
+U 1 1 58D234F2
+P 850 1350
+F 0 "#PWR?" H 850 1450 30  0001 C CNN
+F 1 "VDD" H 850 1460 30  0000 C CNN
+F 2 "" H 850 1350 60  0000 C CNN
+F 3 "" H 850 1350 60  0000 C CNN
+	1    850  1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG?
+U 1 1 58D234FD
+P 950 1350
+F 0 "#FLG?" H 950 1445 30  0001 C CNN
+F 1 "PWR_FLAG" H 950 1530 30  0000 C CNN
+F 2 "" H 950 1350 60  0000 C CNN
+F 3 "" H 950 1350 60  0000 C CNN
+	1    950  1350
+	0    1    1    0   
+$EndComp
+Text Notes 5400 4600 0    79   ~ 16
+BBB Industrial (outdoor)
+Text Notes 7050 5400 0    47   ~ 0
+Data
+Text Label 5300 5150 0    60   ~ 0
+axis0_flow_ref
+Text Label 5300 5200 0    60   ~ 0
+axis1_flow_ref
+Text Label 5300 5250 0    60   ~ 0
+axis2_flow_ref
+Text Label 5300 5300 0    60   ~ 0
+axis3_flow_ref
+Text Label 5300 5350 0    60   ~ 0
+axis4_flow_ref
+Text Label 4800 5150 2    60   ~ 0
+axis0_angle_0..3V3
+Text Label 4800 5200 2    60   ~ 0
+axis1_angle_0..3V3
+Text Label 4800 5250 2    60   ~ 0
+axis2_angle_0..3V3
+Text Label 4800 5300 2    60   ~ 0
+axis3_angle_0..3V3
+Text Label 4800 5350 2    60   ~ 0
+axis4_angle_0..3V3
+Text Label 5300 4850 0    60   ~ 0
+axis0_direction
+Text Label 5300 4900 0    60   ~ 0
+axis1_direction
+Text Label 5300 4950 0    60   ~ 0
+axis2_direction
+Text Label 5300 5000 0    60   ~ 0
+axis3_direction
+Text Label 5300 5050 0    60   ~ 0
+axis4_direction
+$Comp
+L VCC #PWR?
+U 1 1 58D3F566
+P 750 1350
+F 0 "#PWR?" H 750 1450 30  0001 C CNN
+F 1 "VCC" H 750 1450 30  0000 C CNN
+F 2 "" H 750 1350 60  0000 C CNN
+F 3 "" H 750 1350 60  0000 C CNN
+	1    750  1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	750  750  950  750 
+Wire Wire Line
+	750  950  950  950 
+Wire Wire Line
+	950  1150 750  1150
+Wire Wire Line
+	750  1350 850  1350
+Wire Wire Line
+	850  1350 950  1350
+Connection ~ 850  1350
+Connection ~ 950  2600
+Wire Wire Line
+	950  2600 950  2750
+Text Label 5300 4750 0    60   ~ 0
+pressure_ref
+$Sheet
+S 4800 4700 500  1250
+U 58D43CB9
+F0 "BeagleBoneBlackIndustrial" 50
+F1 "electronics/realtime_client.sch" 50
+$EndSheet
+$Comp
+L VSS #PWR?
+U 1 1 59FC1E35
+P 1050 2600
+F 0 "#PWR?" H 1050 2450 50  0001 C CNN
+F 1 "VSS" H 1050 2750 50  0000 C CNN
+F 2 "" H 1050 2600 50  0001 C CNN
+F 3 "" H 1050 2600 50  0001 C CNN
+	1    1050 2600
+	-1   0    0    1   
+$EndComp
+Text Notes 5450 2050 0    88   ~ 18
 Beings
-Text Notes 6300 4050 0    60   ~ 0
-status lights\nsounds\nspeech\nimages\nmails\nwebpages\nhttp/2 pushes (e.g. to mobile devices)
-Text Notes 11000 6500 1    85   ~ 0
-Unix heavy computing network
+Text Notes 9400 4000 0    60   ~ 0
+control signals\nstatus lights\nsounds\nspeech\nimages\nmails\nwebpages\nhttp/2 pushes (e.g. to mobile devices)
+Text Notes 4700 4000 0    60   ~ 0
+images\nspeech\nremote control (rx)\n
+Text Notes 11050 6450 1    85   ~ 0
+UNIX heavy computing cluster
 $EndSCHEMATC
