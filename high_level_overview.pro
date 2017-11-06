@@ -1,4 +1,4 @@
-update=Mon 06 Nov 2017 04:46:08 AM CET
+update=Mon 06 Nov 2017 05:04:50 AM CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -54,7 +54,7 @@ LibName31=contrib
 version=1
 [schematic_editor]
 version=1
-PageLayoutDescrFile=
+PageLayoutDescrFile=/home/anon/worlddevelopment/schematic_page_layout.kicad_wks
 PlotDirectoryName=
 SubpartIdSeparator=0
 SubpartFirstId=65
